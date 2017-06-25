@@ -38,7 +38,7 @@ headerLead(TITLE, function() {
       Flags on blocks or elements. Use them to change appearance, behavior or state.
       The modifier itself must not have the css properties.
     </p>
-    <du>
+    <dl>
       <dt><code class="ouiCode">isDisabled</code></dt>
       <dd>
         Depending on some conditions, it indicates a disabled state.
@@ -58,7 +58,7 @@ headerLead(TITLE, function() {
       <dd></dd>
       <dt><code class="ouiCode">isWarning</code></dt>
       <dd></dd>
-    </du>
+    </dl>
   </section>
 </div>
 
