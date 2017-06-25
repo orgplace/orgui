@@ -1,0 +1,82 @@
+@import (less) '../../lib/third-party/normalize.css';
+
+/*! orgui.css */
+/* The core style for Org UI */
+
+/*
+ * Global definition
+ */
+
+@import '../../lib/namespace.less';
+@import '../../lib/colors.less';
+
+/*
+ * Foundation
+ */
+
+html {
+	box-sizing: border-box;
+	overflow-y: scroll;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+	color: @grayDarker;
+	font-family: sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.5;
+	/*
+	 * Minimum supporting width.
+	 * iPhone5 (viewport width=device-width)
+	 */
+	min-width: 320px;
+}
+
+*:focus {
+	outline: 1px dotted @outlineColor;
+}
+
+a:link, a:visited {
+	color: @brandPrimary;
+}
+a:hover, a:active {
+	color: @brandPrimaryDarker;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: sans-serif;
+	font-size: 100%;
+	line-height: 1.15;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+	margin-bottom: .5rem;
+}
+
+/*
+ * Controls
+ *
+ * They are used as a terminal component.
+ * Do not hold other components.
+ */
+
+@import '../../lib/controls/**';
+
+/*
+ * Container
+ *
+ * They may hold some other components.
+ */
+
+@import '../../lib/containers/**';

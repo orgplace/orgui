@@ -1,0 +1,49 @@
+.@{ns}FieldGroup {
+	// Style
+
+	margin: 16px 0;
+	&:first-child {
+		margin-top: 0;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&__label {
+		display: block;
+		margin-bottom: 4px;
+	}
+	&__helpText {
+		margin: 0;
+		font-size: 80%;
+		color: @gray;
+	}
+
+	// Option
+
+	&.isError {
+		.@{ns}FieldGroup__label {
+			color: @brandHazard;
+		}
+		.@{ns}FieldGroup__helpText {
+			color: @brandHazard;
+		}
+
+		// Specialize
+
+		.@{ns}FieldGroup__child {
+			&.@{ns}InputText, .@{ns}InputText,
+			&.@{ns}InputSelect, .@{ns}InputSelect,
+			&.@{ns}Output, .@{ns}Output {
+				border-color: @brandHazard;
+			}
+		}
+	}
+
+	&.isRequired {
+		.@{ns}FieldGroup__label:after {
+			content: '*';
+			color: @brandHazard;
+		}
+	}
+}

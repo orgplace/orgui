@@ -1,0 +1,39 @@
+@grayDarkest: #070707;
+@grayDarker: #333;
+@grayDark: #555;
+@gray: #888;
+@grayLight: #aaa;
+@grayLighter: #eee;
+@grayLightest: #f7f7f7;
+
+/*
+ * 色覚異常（特に1, 2型）を考慮し、
+ * HSB の SB で 正常系 (Primary, Success) か 異常系 (Hazard, Warning) かは
+ * 少なくとも容易に区別できるようにした。
+ */
+@brandPrimary: #007BBB;
+@brandSuccess: #7DB275;
+@brandHazard: #FF051E;
+@brandWarning: #D1AE00;
+
+@brandPrimaryDarker: darken(@brandPrimary, 15%);
+@brandSuccessDarker: darken(@brandSuccess, 15%);
+@brandHazardDarker: darken(@brandHazard, 15%);
+@brandWarningDarker: darken(@brandWarning, 15%);
+
+@brandPrimaryDark: darken(@brandPrimary, 5%);
+@brandSuccessDark: darken(@brandSuccess, 5%);
+@brandHazardDark: darken(@brandHazard, 5%);
+@brandWarningDark: darken(@brandWarning, 5%);
+
+@brandPrimaryLight: lighten(@brandPrimary, 5%);
+@brandSuccessLight: lighten(@brandSuccess, 5%);
+@brandHazardLight: lighten(@brandHazard, 5%);
+@brandWarningLight: lighten(@brandWarning, 5%);
+
+@brandPrimaryLighter: lighten(@brandPrimary, 15%);
+@brandSuccessLighter: lighten(@brandSuccess, 15%);
+@brandHazardLighter: lighten(@brandHazard, 15%);
+@brandWarningLighter: lighten(@brandWarning, 15%);
+
+@outlineColor: @gray;

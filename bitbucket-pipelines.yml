@@ -1,0 +1,8 @@
+image: utisam/docker-static-web
+
+pipelines:
+  default:
+    - step:
+        script:
+          - 'make'
+          - 'find dist -name "*.html" -print0 | xargs --verbose -0 -n1 html-validator --verbose --file'

@@ -1,0 +1,40 @@
+.@{ns}Card {
+	@cardPadding: 20px;
+	@cardBoderRadius: 4px;
+
+	border-radius: @cardBoderRadius;
+
+	&__header, &__footer {
+		padding: 12px @cardPadding;
+	}
+	&>*:first-child {
+		border-top-left-radius: @cardBoderRadius;
+		border-top-right-radius: @cardBoderRadius;
+	}
+	&>*:last-child {
+		border-bottom-left-radius: @cardBoderRadius;
+		border-bottom-right-radius: @cardBoderRadius;
+	}
+	&__content {
+		padding: @cardPadding;
+		background-color: #FFF;
+	}
+
+	.colorCard(@borderColor, @fillColor) {
+		border: 1px solid @borderColor;
+		.@{ns}Card__header, .@{ns}Card__footer {
+			background-color: @fillColor;
+		}
+		.@{ns}Card__header {
+			border-bottom: 1px solid @borderColor;
+		}
+		.@{ns}Card__footer {
+			border-top: 1px solid @borderColor;
+		}
+	}
+	.colorCard(@grayLight, @grayLighter);
+	&.isPrimary {.colorCard(@brandPrimaryLight, @brandPrimaryLighter);}
+	&.isSuccess {.colorCard(@brandSuccessLight, @brandSuccessLighter);}
+	&.isDanger {.colorCard(@brandHazardLight, @brandHazardLighter);}
+	&.isWarning {.colorCard(@brandWarningLight, @brandWarningLighter);}
+}

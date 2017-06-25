@@ -1,0 +1,62 @@
+.@{ns}Button {
+	// Mixins
+
+	.filledButton(@color, @background, @border, @hoverBackground, @hoverBorder, @activeBackground, @activeBorder) {
+		&, &:link, &:visited, &:hover, &:active {
+			color: @color;
+		}
+		&, &:link, &:visited {
+			border: 1px solid @border;
+			background-color: @background;
+		}
+		&:hover {
+			border: 1px solid @hoverBorder;
+			background-color: @hoverBackground;
+		}
+		&:active {
+			border: 1px solid @activeBorder;
+			background-color: @activeBackground;
+		}
+	}
+	.disabledButton(@color) {
+		border: 1px solid @color;
+		background-color: @color;
+		pointer-events: none;
+		&, &:link, &:visited, &:hover, &:active {
+			color: @grayLighter;
+		}
+	}
+
+	// Style
+
+	display: inline-block;
+	height: 36px;
+	padding: 8px;
+	border-radius: 3px;
+	cursor: pointer;
+	text-align: center;
+	.filledButton(@grayDarker, #fff, @gray,
+		@grayLighter, @grayDark, @gray, @grayDarker);
+
+	// Option
+
+	&.isPrimary {.filledButton(#fff, @brandPrimary, @brandPrimaryDark,
+		@brandPrimaryDark, @brandPrimaryDarker, @brandPrimaryDarker, @brandPrimaryDarker);}
+	&.isSuccess {.filledButton(#fff, @brandSuccess, @brandSuccessDark,
+		@brandSuccessDark, @brandSuccessDarker, @brandSuccessDarker, @brandSuccessDarker);}
+	 &.isDanger {.filledButton(#fff, @brandHazard, @brandHazardDark,
+		@brandHazardDark, @brandHazardDarker, @brandHazardDarker, @brandHazardDarker);}
+	&.isWarning {.filledButton(#fff, @brandWarning, @brandWarningDark,
+		@brandWarningDark, @brandWarningDarker, @brandWarningDarker, @brandWarningDarker);}
+
+	&.isDisabled {.disabledButton(@grayDarker)};
+	&.isDisabled.isPrimary {.disabledButton(@brandPrimaryDarker);}
+	&.isDisabled.isSuccess {.disabledButton(@brandSuccessDarker);}
+	&.isDisabled.isDanger {.disabledButton(@brandHazardDarker);}
+	&.isDisabled.isWarning {.disabledButton(@brandWarningDarker);}
+}
+
+a.@{ns}Button {
+	text-decoration: none;
+	line-height: 1.15;
+}

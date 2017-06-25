@@ -1,0 +1,22 @@
+@flexSideBreakpoints: 240px;
+@flexSideGutter: 24px;
+@flexSideRate: percentage(@flexSideGutter/@flexSideBreakpoints);
+
+.@{ns}FlexSidePadding {
+	padding-left: @flexSideGutter;
+	padding-right: @flexSideGutter;
+}
+.@{ns}FlexSideMargin {
+	margin-left: @flexSideGutter;
+	margin-right: @flexSideGutter;
+}
+@media screen and (min-width: @flexSideBreakpoints) {
+	.@{ns}FlexSidePadding {
+		padding-left: @flexSideRate;
+		padding-right: @flexSideRate;
+	}
+	.@{ns}FlexSideMargin {
+		margin-left: @flexSideRate;
+		margin-right: @flexSideRate;
+	}
+}
