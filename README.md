@@ -1,4 +1,4 @@
-# Org UI Demo
+# Org UI
 
 ## Build
 
@@ -6,6 +6,9 @@
 * PHP
 * html-minifier
 * less
+  * glob
+  * clean-css
+  * autoprefix
 * pygments
 
 ```
