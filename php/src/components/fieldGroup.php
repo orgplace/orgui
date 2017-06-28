@@ -14,7 +14,8 @@ html5(TITLE . ' | Org UI', function () {
 <?php
 headerLead(TITLE, function() {
 ?>
-<!-- TODO -->
+Field Groupはラベル付けられたコンポーネントを表すコンテナです。
+オプションで、必須であることを示したり、ヘルプを追記したりできます。
 <?php
 });
 ?>
