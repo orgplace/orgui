@@ -14,7 +14,8 @@ html5(TITLE . ' | Org UI', function () {
 <?php
 headerLead(TITLE, function() {
 ?>
-<!-- TODO -->
+Overlayに含まれる要素は、画面の手前に重ねて表示されます。
+ユーザの操作を強制的に一時中断させたい場合に利用します。
 <?php
 });
 ?>
