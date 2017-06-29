@@ -3,9 +3,6 @@ require('lib/html5.php');
 require('lib/navbar.php');
 
 html5(_('Org UI'), function () {
-?>
-  <link rel="stylesheet" href="/_ui/css/0.1/orgui.css">
-<?php
 }, function () {
   navbar();
 ?>
