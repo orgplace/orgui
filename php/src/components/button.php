@@ -9,17 +9,15 @@ const TITLE = 'Button';
 
 html5(TITLE . ' | Org UI', function () {
 }, function () {
-  navbar();
-?>
+    navbar(); ?>
 
 <?php
-headerLead(TITLE, function() {
-?>
+headerLead(TITLE, function () {
+        ?>
 Button is one of popular component to trigger events
 including links via the anchor tags.
 <?php
-});
-?>
+    }); ?>
 
 <section class="ouiFlexSideMargin sampleSection">
   <h3>Basic</h3>

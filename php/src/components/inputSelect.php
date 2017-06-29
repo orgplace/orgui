@@ -9,16 +9,14 @@ const TITLE = 'Input Select';
 
 html5(TITLE . ' | Org UI', function () {
 }, function () {
-  navbar();
-?>
+    navbar(); ?>
 
 <?php
-headerLead(TITLE, function() {
-?>
+headerLead(TITLE, function () {
+        ?>
 <!-- TODO -->
 <?php
-});
-?>
+    }); ?>
 
 <section class="ouiFlexSideMargin sampleSection">
   <h3>Basic</h3>

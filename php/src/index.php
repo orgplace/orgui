@@ -4,12 +4,11 @@ require('lib/html5.php');
 require('lib/navbar.php');
 
 html5(_('Org UI'), function () {
-?>
+    ?>
   <link rel="stylesheet" href="/_ui/css/0.1/orgui.css">
 <?php
 }, function () {
-  navbar();
-?>
+        navbar(); ?>
 
 <div style="background-color: #eee">
   <header class="ouiFlexSideMargin" style="text-align: center; padding: 40px 0">
@@ -30,4 +29,4 @@ html5(_('Org UI'), function () {
 </pre></div>
 
 <?php
-});
+    });

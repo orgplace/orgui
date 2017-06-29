@@ -1,7 +1,7 @@
 <?php
 function navbar()
 {
-?>
+    ?>
 
 <nav class="navbar ouiFlexSideMargin">
   <div class="navbar__left">

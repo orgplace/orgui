@@ -9,16 +9,14 @@ const TITLE = 'Input Text';
 
 html5(TITLE . ' | Org UI', function () {
 }, function () {
-  navbar();
-?>
+    navbar(); ?>
 
 <?php
-headerLead(TITLE, function() {
-?>
+headerLead(TITLE, function () {
+        ?>
 Input Textは、ユーザから文字列を受け取るコントロールです。
 <?php
-});
-?>
+    }); ?>
 
 <section class="ouiFlexSideMargin sampleSection">
   <h3>Basic</h3>

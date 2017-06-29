@@ -1,7 +1,7 @@
 <?php
 function displayCase($name)
 {
-?>
+    ?>
 
 <div class="displayCase">
   <div class="displayCase__sample">

@@ -8,17 +8,15 @@ const TITLE = 'Basics';
 
 html5(TITLE . ' | Org UI', function () {
 }, function () {
-  navbar();
-?>
+    navbar(); ?>
 
 <?php
-headerLead(TITLE, function() {
-?>
+headerLead(TITLE, function () {
+        ?>
   Org UI employs a handful of important global styles and settings that you'll need to be aware of when using it,
   all of which are almost exclusively geared towards the normalization of cross browser styles.
 <?php
-});
-?>
+    }); ?>
 
 <div class="ouiFlexSideMargin" style="padding: 40px 0">
   <section>

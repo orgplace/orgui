@@ -1,7 +1,7 @@
 <?php
 function html5($title, $ext_head, $body)
 {
-?>
+    ?>
 <!DOCTYPE html>
 <html>
 <head>
