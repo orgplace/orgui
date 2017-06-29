@@ -21,12 +21,12 @@
 
 	// Option
 
-	&.isError {
+	&.isHazarding {
 		.@{ns}FieldGroup__label {
-			color: @brandHazard;
+			color: @brandHazarding;
 		}
 		.@{ns}FieldGroup__helpText {
-			color: @brandHazard;
+			color: @brandHazarding;
 		}
 
 		// Specialize
@@ -35,7 +35,7 @@
 			&.@{ns}InputText, .@{ns}InputText,
 			&.@{ns}InputSelect, .@{ns}InputSelect,
 			&.@{ns}Output, .@{ns}Output {
-				border-color: @brandHazard;
+				border-color: @brandHazarding;
 			}
 		}
 	}
@@ -43,7 +43,7 @@
 	&.isRequired {
 		.@{ns}FieldGroup__label:after {
 			content: '*';
-			color: @brandHazard;
+			color: @brandHazarding;
 		}
 	}
 }

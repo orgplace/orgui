@@ -44,9 +44,9 @@ headerLead(TITLE, function() {
         Depending on some conditions, it indicates a disabled state.
         It is mainly given to buttons that can not be clicked, text that can not be input, etc.
       </dd>
-      <dt><code class="ouiCode">isDanger</code></dt>
+      <dt><code class="ouiCode">isHazarding</code></dt>
       <dd></dd>
-      <dt><code class="ouiCode">isError</code></dt>
+      <dt><code class="ouiCode">isHazarding</code></dt>
       <dd></dd>
       <dt><code class="ouiCode">isPrimary</code></dt>
       <dd></dd>
