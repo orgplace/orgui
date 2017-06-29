@@ -1,4 +1,5 @@
 <?php
+require('lib/init.php');
 require('lib/html5.php');
 require('lib/navbar.php');
 
