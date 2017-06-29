@@ -14,7 +14,7 @@ html5(TITLE . ' | Org UI', function () {
 <?php
 headerLead(TITLE, function() {
 ?>
-<!-- TODO -->
+Input Textは、ユーザから文字列を受け取るコントロールです。
 <?php
 });
 ?>
