@@ -12,4 +12,4 @@ pipelines:
           script:
             - 'make'
             - 'find dist -name "*.html" -print0 | xargs --verbose -0 -n1 html-validator --verbose --file'
-            - 'rsync -azvr --delete dist/ orgplace@orgplace.f5.si:/srv/master/_ui/'
+            - 'rsync -azvr --delete dist/ orgplace@orgplace.f5.si:/srv/master/_/ui/'
