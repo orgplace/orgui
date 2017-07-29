@@ -17,7 +17,7 @@ all: $(TARGETS)
 
 $(TARGET_DIR)/%.css: $(SOURCE_DIR)/%.less $(LIB_SOURCES)
 	-mkdir -p $(dir $@)
-	lessc --strict-imports --glob --clean-css  --autoprefix="last 2 versions, not ie <= 10" $< > $@
+	lessc --strict-imports --glob --clean-css  --autoprefix="last 10 versions, not ie <= 10" $< > $@
 	# generate dependencies
 	lessc --strict-imports --glob -M $< $@ > $(TARGET_DIR)/$*.d
 	# add rules to ignore missing prerequisites

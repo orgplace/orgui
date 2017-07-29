@@ -37,6 +37,7 @@ class SampleItem
   new SampleItem("Field Group", "fieldGroup.html"),
   new SampleItem("Input Select", "inputSelect.html"),
   new SampleItem("Input Text", "inputText.html"),
+  new SampleItem("Loading Spinner", "loadingSpinner.html"),
   new SampleItem("Overlay", "overlay.html"),
 ];
     foreach ($items as $item) {
