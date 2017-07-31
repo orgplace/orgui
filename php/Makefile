@@ -11,6 +11,7 @@ SAMPLE_TARGETS =  $(patsubst $(SAMPLE_DIR)/%.html,$(SAMPLE_DIR)/%.highlite.html,
 HTML_MINIFIER_OPT += --html5
 HTML_MINIFIER_OPT += --collapse-whitespace
 HTML_MINIFIER_OPT += --minify-css
+HTML_MINIFIER_OPT += --minify-js
 HTML_MINIFIER_OPT += --remove-comments
 HTML_MINIFIER_OPT += --sort-attributes
 HTML_MINIFIER_OPT += --sort-class-name
