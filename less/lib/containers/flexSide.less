@@ -1,27 +1,24 @@
 @flexSideMinDeviceWidth: 320px;
 @flexSideMinMargin: 10px;
 @flexSideRate: @flexSideMinMargin/@flexSideMinDeviceWidth;
-@flexSidePercentage: percentage(@flexSideRate);
 @flexSideMaxContentWidth: 960px;
 @flexSideBreakpoint: @flexSideMaxContentWidth / (1 - @flexSideRate * 2);
 
 .@{ns}FlexSidePadding {
-	padding-left: @flexSidePercentage;
-	padding-right: @flexSidePercentage;
+	padding-left: auto;
+	padding-right: auto;
+	width: percentage(1 - @flexSideRate * 2)
 }
 .@{ns}FlexSideMargin {
-	margin-left: @flexSidePercentage;
-	margin-right: @flexSidePercentage;
+	margin-left: auto;
+	margin-right: auto;
+	width: percentage(1 - @flexSideRate * 2)
 }
 @media screen and (min-width: (@flexSideBreakpoint)) {
 	.@{ns}FlexSidePadding {
 		width: @flexSideMaxContentWidth;
-		padding-left: auto;
-		padding-right: auto;
 	}
 	.@{ns}FlexSideMargin {
 		width: @flexSideMaxContentWidth;
-		margin-left: auto;
-		margin-right: auto;
 	}
 }
