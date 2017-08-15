@@ -14,4 +14,4 @@ pipelines:
             - 'find dist -name "*.html" -print0 | xargs --verbose -0 -n1 html-validator --verbose --file'
             - 'find dist -type f -name "*.d" -exec rm {} \;'
             - 'find dist -type f -exec sh -c "gzip -c {} > {}.gz" \;'
-            - 'rsync -azvr --delete dist/ orgplace@orgplace.f5.si:/srv/master/_/ui/ --exclude "*.d"'
+            - 'rsync -azvr --delete --chmod=D755,F644 dist/ orgplace@orgplace.f5.si:/srv/master/_/ui/ --exclude "*.d"'
