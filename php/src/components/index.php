@@ -35,6 +35,7 @@ class SampleItem
   new SampleItem("Breadcrumb", "breadcrumb.html"),
   new SampleItem("Card", "card.html"),
   new SampleItem("Field Group", "fieldGroup.html"),
+  new SampleItem("Input Check", "inputCheck.html"),
   new SampleItem("Input Select", "inputSelect.html"),
   new SampleItem("Input Text", "inputText.html"),
   new SampleItem("Loading Spinner", "loadingSpinner.html"),
