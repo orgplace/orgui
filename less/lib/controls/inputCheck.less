@@ -1,38 +1,41 @@
 .@{ns}InputCheck {
-	height: 36px;
-	padding: 9px 0px;
+  height: 36px;
+  padding: 9px 0px;
 
-	&__input {
-		display: none;
-	}
-	&__text {
-		padding-left: 20px;
-		position: relative;
-	}
-	&__text:before{
-		content: "";
-		display: block;
-		position: absolute;
-		top: 1px;
-		left: 0;
-		width: 15px;
-		height: 15px;
-		border: 1px solid #999;
-		border-radius: 4px;
-	}
-	&__input:checked + &__text {
-		color: @brandPrimary;
-	}
-	&__input:checked + &__text:after{
-		content: "";
-		display: block;
-		position: absolute;
-		top: -4px;
-		left: 5px;
-		width: 8px;
-		height: 16px;
-		transform: rotate(40deg);
-		border-bottom: 3px solid @brandPrimary;
-		border-right: 3px solid @brandPrimary;
-	}
+  &__input {
+    // For focusing
+    opacity: 0;
+    width: 0;
+    margin-right: -4px;
+  }
+  &__text {
+    padding-left: 20px;
+    position: relative;
+  }
+  &__text:before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #999;
+    border-radius: 4px;
+  }
+  &__input:checked + &__text {
+    color: @brandPrimary;
+  }
+  &__input:checked + &__text:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: -4px;
+    left: 5px;
+    width: 8px;
+    height: 16px;
+    transform: rotate(40deg);
+    border-bottom: 3px solid @brandPrimary;
+    border-right: 3px solid @brandPrimary;
+  }
 }
