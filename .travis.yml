@@ -22,7 +22,7 @@ before_script:
 
 script:
 - make -j2
-- 'find dist -type f -name "*.d" -exec rm {} \;'
+- 'find dist-en -type f -name "*.d" -exec rm {} \;'
 - 'find dist-en \( -name "*.html" -o -name "*.css" -o -name "*.js" \) -type f -exec sh -c "gzip -c {} > {}.gz" \;'
 
 before_deploy:
@@ -33,6 +33,6 @@ before_deploy:
 deploy:
   provider: script
   skip_cleanup: true
-  script: rsync -i deploy_ssh_key -azvr --delete --chmod=D755,F644 dist/ orgplace@orgplace.f5.si:/srv/master/_/ui/
+  script: rsync -i deploy_ssh_key -azvr --delete --chmod=D755,F644 dist-en/ orgplace@orgplace.f5.si:/srv/master/_/ui/
   on:
     branch: master
