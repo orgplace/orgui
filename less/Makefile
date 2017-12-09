@@ -1,3 +1,4 @@
+SHELL=/bin/bash -o pipefail
 SED=sed
 
 TARGET_DIR = dist
@@ -29,4 +30,3 @@ $(TARGET_DIR)/%.css: $(SOURCE_DIR)/%.less $(LIB_SOURCES)
 
 clean:
 	-rm -rf $(TARGET_DIR)
-
