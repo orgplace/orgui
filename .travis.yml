@@ -1,12 +1,13 @@
 language: generic
 sudo: false
+dist: xenial
 git:
   depth: 1
 
 addons:
   apt:
     packages:
-      - php
+      - php-cli
 
 install:
 - nvm install --lts
