@@ -40,6 +40,7 @@ class SampleItem
   new SampleItem("Input Text", "inputText.html"),
   new SampleItem("Loading Spinner", "loadingSpinner.html"),
   new SampleItem("Overlay", "overlay.html"),
+  new SampleItem("Switch", "switch.html"),
 ];
     foreach ($items as $item) {
         ?>
