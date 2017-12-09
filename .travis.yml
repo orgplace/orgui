@@ -1,0 +1,16 @@
+language: generic
+sudo: false
+git:
+  depth: 1
+
+addons:
+  apt:
+    packages:
+      - php
+
+install:
+- nvm install --lts
+- npm i -g less less-plugin-autoprefix less-plugin-clean-css less-plugin-glob less-plugin-csscomb html-minifier html-validator-cli
+
+script:
+- make -j2
