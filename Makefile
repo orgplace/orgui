@@ -1,7 +1,6 @@
 SHELL=/bin/bash -o pipefail
 
-LANGUAGE_CODE = en
-TARGET_DIR = dist-$(LANGUAGE_CODE)
+TARGET_DIR = dist
 
 HTML_MODULES = php
 CSS_MODULES = less
@@ -17,10 +16,10 @@ MODULES = $(HTML_MODULES) $(CSS_MODULES)
 all: src $(MODULES)
 
 clean:
-	-rm -rf $(TARGET_DIR) php/locale/*/C/LC_MESSAGES/messages.mo
+	-rm -rf $(TARGET_DIR)
 
 watch:
-	inotifywait  -m -r \
+	inotifywait -m -r \
 		-e create,delete,modify,move \
 		--exclude '(\./$(TARGET_DIR)/.*|.*\.git/.*)' \
 		--format "%w%f" . | \
