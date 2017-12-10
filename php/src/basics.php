@@ -45,8 +45,6 @@ headerLead(TITLE, function () {
       </dd>
       <dt><code class="ouiCode">isHazarding</code></dt>
       <dd></dd>
-      <dt><code class="ouiCode">isHazarding</code></dt>
-      <dd></dd>
       <dt><code class="ouiCode">isPrimary</code></dt>
       <dd></dd>
       <dt><code class="ouiCode">isRequired</code></dt>
