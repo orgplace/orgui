@@ -4,7 +4,8 @@ TARGET_DIR = dist
 
 HTML_MODULES = php
 CSS_MODULES = less
-MODULES = $(HTML_MODULES) $(CSS_MODULES)
+JS_MODULES = js-gcl
+MODULES = $(HTML_MODULES) $(CSS_MODULES) $(JS_MODULES)
 
 .DELETE_ON_ERROR:
 
@@ -29,7 +30,11 @@ src:
 	rsync -au --exclude ".gitkeep" "src/" "$(TARGET_DIR)/"
 
 $(HTML_MODULES):
-	+$(MAKE) -C "$@" -e "TARGET_DIR=../$(TARGET_DIR)"
+	+$(MAKE) -C "$@" -e "TARGET_DIR=$(abspath $(TARGET_DIR))"
 
 $(CSS_MODULES):
-	+$(MAKE) -C "$@" -e "TARGET_DIR=../$(TARGET_DIR)/css"
+	+$(MAKE) -C "$@" -e "TARGET_DIR=$(abspath $(TARGET_DIR)/css)"
+
+$(JS_MODULES):
+	+$(MAKE) -C "$@" -e "TARGET_DIR=$(abspath $(TARGET_DIR)/js)"
+
