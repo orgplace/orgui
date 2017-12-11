@@ -6,9 +6,9 @@ require('lib/navbar.php');
 
 const TITLE = 'Basics';
 
-html5(TITLE . ' | Org UI', function () {
+html5(0, TITLE . ' | Org UI', function () {
 }, function () {
-    navbar(); ?>
+    navbar(0); ?>
 
 <?php
 headerLead(TITLE, function () {

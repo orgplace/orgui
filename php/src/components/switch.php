@@ -7,9 +7,9 @@ require('lib/navbar.php');
 
 const TITLE = 'Switch';
 
-html5(TITLE . ' | Org UI', function () {
+html5(1, TITLE . ' | Org UI', function () {
 }, function () {
-    navbar(); ?>
+    navbar(1); ?>
 
 <?php
 headerLead(TITLE, function () {

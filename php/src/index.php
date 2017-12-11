@@ -3,12 +3,11 @@ require('lib/init.php');
 require('lib/html5.php');
 require('lib/navbar.php');
 
-html5(_('Org UI'), function () {
+html5(0, _('Org UI'), function () {
     ?>
-  <link rel="stylesheet" href="/_/ui/css/0.1/orgui.css">
 <?php
 }, function () {
-        navbar(); ?>
+        navbar(0); ?>
 
 <div style="background-color: #eee">
   <header class="ouiFlexSideMargin" style="text-align: center; padding: 40px 0">

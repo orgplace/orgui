@@ -16,3 +16,12 @@
 ```
 make
 ```
+
+To check the result:
+
+```
+cd dist
+python3 -m http.server
+```
+
+Open http://127.0.0.1:8000/ with your favorite browser.

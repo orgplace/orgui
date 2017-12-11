@@ -1,5 +1,7 @@
 <?php
-function html5($title, $ext_head, $body)
+require_once('relpath.php');
+
+function html5(int $self_depth, $title, $ext_head, $body)
 {
     ?>
 <!DOCTYPE html>
@@ -8,9 +10,9 @@ function html5($title, $ext_head, $body)
   <title><?=$title?></title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="/_/ui/css/0.1/orgui.css">
-  <link rel="stylesheet" href="/_/ui/css/0.1/orgui-coding.css">
-  <link rel="stylesheet" href="/_/ui/css/demo.css">
+  <link rel="stylesheet" href="<?=relpath('css/0.1/orgui.css', $self_depth)?>">
+  <link rel="stylesheet" href="<?=relpath('css/0.1/orgui-coding.css', $self_depth)?>">
+  <link rel="stylesheet" href="<?=relpath('css/demo.css', $self_depth)?>">
 <?php $ext_head(); ?>
 </head>
 <body>
