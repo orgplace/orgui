@@ -1,5 +1,5 @@
 <?php
-function relpath(string $path_from_top, int $self_depth) {
+function relpath($path_from_top, $self_depth) {
     if ($self_depth == 0) {
         return $path_from_top;
     }

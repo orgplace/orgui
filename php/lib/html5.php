@@ -1,7 +1,7 @@
 <?php
 require_once('relpath.php');
 
-function html5(int $self_depth, $title, $ext_head, $body)
+function html5($self_depth, $title, $ext_head, $body)
 {
     ?>
 <!DOCTYPE html>

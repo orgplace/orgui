@@ -1,7 +1,7 @@
 <?php
 require_once('relpath.php');
 
-function navbar(int $self_depth)
+function navbar($self_depth)
 {
     ?>
 
