@@ -41,6 +41,7 @@ class SampleItem
   new SampleItem("Loading Spinner", "loadingSpinner.html"),
   new SampleItem("Overlay", "overlay.html"),
   new SampleItem("Switch", "switch.html"),
+  new SampleItem("Table", "table.html"),
 ];
     foreach ($items as $item) {
         ?>
