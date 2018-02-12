@@ -4,6 +4,9 @@
 
 	border-radius: @cardBoderRadius;
 
+	display: flex;
+	flex-direction: column;
+
 	&__header, &__footer {
 		padding: 12px @cardPadding;
 	}
@@ -18,6 +21,7 @@
 	&__content {
 		padding: @cardPadding;
 		background-color: #fff;
+		flex-grow: 1;
 	}
 
 	.colorCard(@borderColor, @fillColor) {
