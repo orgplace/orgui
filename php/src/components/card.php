@@ -28,10 +28,5 @@ headerLead(TITLE, function () {
   <?php displayCase('card/header_footer'); ?>
 </section>
 
-<section class="ouiFlexSideMargin sampleSection">
-  <h3>Color variation</h3>
-  <?php displayCase('card/colors'); ?>
-</section>
-
 <?php
 });

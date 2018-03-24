@@ -1,14 +1,15 @@
 .@{ns}Card {
-	@cardPadding: 20px;
+	@cardPadding: 16px;
 	@cardBoderRadius: 2px;
 
 	border-radius: @cardBoderRadius;
+	border: 1px solid @grayLight;
 
 	display: flex;
 	flex-direction: column;
 
 	&__header, &__footer {
-		padding: 12px @cardPadding;
+		padding: calc(@cardPadding / 2) @cardPadding;
 	}
 	&>*:first-child {
 		border-top-left-radius: @cardBoderRadius;
@@ -23,22 +24,4 @@
 		background-color: #fff;
 		flex-grow: 1;
 	}
-
-	.colorCard(@borderColor, @fillColor) {
-		border: 1px solid @borderColor;
-		.@{ns}Card__header, .@{ns}Card__footer {
-			background-color: @fillColor;
-		}
-		.@{ns}Card__header {
-			border-bottom: 1px solid @borderColor;
-		}
-		.@{ns}Card__footer {
-			border-top: 1px solid @borderColor;
-		}
-	}
-	.colorCard(@grayLight, @grayLighter);
-	&.isPrimary {.colorCard(@brandPrimaryLight, @brandPrimaryLighter);}
-	&.isSuccess {.colorCard(@brandSuccessLight, @brandSuccessLighter);}
-	&.isHazarding {.colorCard(@brandHazardingLight, @brandHazardingLighter);}
-	&.isWarning {.colorCard(@brandWarningLight, @brandWarningLighter);}
 }
