@@ -1,8 +1,9 @@
 .@{ns}HPack {
+	display: flex;
+
 	&>*:not(:first-child) {
 		border-top-left-radius: 0;
 		border-bottom-left-radius: 0;
-		margin-left: -1px;
 	}
 	&>*:not(:last-child) {
 		border-top-right-radius: 0;
@@ -11,6 +12,9 @@
 }
 
 .@{ns}VPack {
+	display: flex;
+	flex-direction: column;
+
 	&>*:not(:first-child) {
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
