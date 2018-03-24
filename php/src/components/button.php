@@ -30,7 +30,7 @@ including links via the anchor tags.
 </section>
 
 <section class="ouiFlexSideMargin sampleSection">
-  <h3>Color variation</h3>
+  <h3>Disabled button</h3>
   <?php displayCase('button/disabled'); ?>
 </section>
 

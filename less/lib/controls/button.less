@@ -18,12 +18,12 @@
       background-color: @activeBackground;
     }
   }
-  .disabledButton(@color) {
-    border: 1px solid @color;
-    background-color: @color;
+  .disabledButton(@color, @background) {
+    border: 1px solid @background;
+    background-color: @background;
     pointer-events: none;
     &, &:link, &:visited, &:hover, &:active {
-      color: @grayLighter;
+      color: @color;
     }
   }
 
@@ -49,11 +49,11 @@
   &.isWarning {.filledButton(#fff, @brandWarning, @brandWarningDark,
     @brandWarningDark, @brandWarningDarker, @brandWarningDarker, @brandWarningDarker);}
 
-  &.isDisabled {.disabledButton(@grayDarker)};
-  &.isDisabled.isPrimary {.disabledButton(@brandPrimaryDarker);}
-  &.isDisabled.isSuccess {.disabledButton(@brandSuccessDarker);}
-  &.isDisabled.isHazarding {.disabledButton(@brandHazardingDarker);}
-  &.isDisabled.isWarning {.disabledButton(@brandWarningDarker);}
+  &.isDisabled {.disabledButton(#fff, @grayLight)};
+  &.isDisabled.isPrimary {.disabledButton(#fff, @brandPrimaryLighter);}
+  &.isDisabled.isSuccess {.disabledButton(#fff, @brandSuccessLighter);}
+  &.isDisabled.isHazarding {.disabledButton(#fff, @brandHazardingLighter);}
+  &.isDisabled.isWarning {.disabledButton(#fff, @brandWarningLighter);}
 }
 
 a.@{ns}Button {
