@@ -10,7 +10,6 @@ SAMPLE_DIR = sample
 SAMPLE_SOURCES = $(shell find $(SAMPLE_DIR) -type f -name '*.html' ! -name '*.highlite.html')
 SAMPLE_TARGETS =  $(patsubst $(SAMPLE_DIR)/%.html,$(SAMPLE_DIR)/%.highlite.html,$(SAMPLE_SOURCES))
 
-HTML_MINIFIER_OPT += --html5
 HTML_MINIFIER_OPT += --collapse-whitespace
 HTML_MINIFIER_OPT += --minify-css
 HTML_MINIFIER_OPT += --minify-js
