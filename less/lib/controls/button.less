@@ -49,11 +49,11 @@
   &.isWarning {.filledButton(#fff, @brandWarning, @brandWarningDark,
     @brandWarningDark, @brandWarningDarker, @brandWarningDarker, @brandWarningDarker);}
 
-  &.isDisabled {.disabledButton(#fff, @grayLight)};
-  &.isDisabled.isPrimary {.disabledButton(#fff, @brandPrimaryLighter);}
-  &.isDisabled.isSuccess {.disabledButton(#fff, @brandSuccessLighter);}
-  &.isDisabled.isHazarding {.disabledButton(#fff, @brandHazardingLighter);}
-  &.isDisabled.isWarning {.disabledButton(#fff, @brandWarningLighter);}
+  &.isDisabled {.disabledButton(@grayDark, @grayLighter)};
+  &.isDisabled.isPrimary {.disabledButton(@brandPrimaryDark, @brandPrimaryLighter);}
+  &.isDisabled.isSuccess {.disabledButton(@brandSuccessDark, @brandSuccessLighter);}
+  &.isDisabled.isHazarding {.disabledButton(@brandHazardingDark, @brandHazardingLighter);}
+  &.isDisabled.isWarning {.disabledButton(@brandWarningDark, @brandWarningLighter);}
 }
 
 a.@{ns}Button {
