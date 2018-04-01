@@ -47,10 +47,8 @@ class SampleItem
 ];
     foreach ($items as $item) {
         ?>
-  <div class="ouiCard">
-    <div class="ouiCard__content">
-      <a href="<?= $item->href ?>"><?= $item->title ?></a>
-    </div>
+  <div class="ouiCard ouiCardItem">
+    <a href="<?= $item->href ?>"><?= $item->title ?></a>
   </div>
 <?php
     } ?>

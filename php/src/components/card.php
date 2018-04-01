@@ -24,8 +24,8 @@ headerLead(TITLE, function () {
 </section>
 
 <section class="ouiFlexSideMargin sampleSection">
-  <h3>Header &amp; Footer</h3>
-  <?php displayCase('card/header_footer'); ?>
+  <h3>Shorthand</h3>
+  <?php displayCase('card/shorthand'); ?>
 </section>
 
 <?php
