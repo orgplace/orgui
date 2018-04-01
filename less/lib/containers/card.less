@@ -10,23 +10,6 @@
 	flex-direction: column;
 
 	background-color: #fff;
-
-	// For backward compatibility
-	 &__content, &>* {
-		padding: (@cardPadding / 2) @cardPadding;
-	}
-	&__header, &>*:first-child {
-		border-top-left-radius: @cardBoderRadius;
-		border-top-right-radius: @cardBoderRadius;
-
-		padding-top: @cardPadding;
-	}
-	&__footer, &>*:last-child {
-		border-bottom-left-radius: @cardBoderRadius;
-		border-bottom-right-radius: @cardBoderRadius;
-
-		padding-bottom: @cardPadding;
-	}
 }
 
 .@{ns}CardItem {
