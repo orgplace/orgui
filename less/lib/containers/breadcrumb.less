@@ -1,22 +1,22 @@
 .@{ns}Breadcrumb {
-	padding: 4px;
-	display: flex;
+  padding: 4px;
+  display: flex;
 
 }
 
 .@{ns}BreadcrumbItem {
-	display: inline-block;
+  display: inline-block;
 
-	&:not(:last-child):after {
-		padding: 0 4px;
-		display: inline-block;
-		color: @grayLight;
-		text-decoration: none;
-		content: "/";
-		outline: none;
-	}
-	&:last-child {
-		color: @grayDark;
-		pointer-events: none;
-	}
+  &:not(:last-child):after {
+    padding: 0 4px;
+    display: inline-block;
+    color: @grayLight;
+    text-decoration: none;
+    content: "/";
+    outline: none;
+  }
+  &:last-child {
+    color: @grayDark;
+    pointer-events: none;
+  }
 }

@@ -5,20 +5,20 @@
 @flexSideBreakpoint: @flexSideMaxContentWidth / (1 - @flexSideRate * 2);
 
 .@{ns}FlexSidePadding {
-	padding-left: auto;
-	padding-right: auto;
-	width: percentage(1 - @flexSideRate * 2)
+  padding-left: auto;
+  padding-right: auto;
+  width: percentage(1 - @flexSideRate * 2)
 }
 .@{ns}FlexSideMargin {
-	margin-left: auto;
-	margin-right: auto;
-	width: percentage(1 - @flexSideRate * 2)
+  margin-left: auto;
+  margin-right: auto;
+  width: percentage(1 - @flexSideRate * 2)
 }
 @media screen and (min-width: (@flexSideBreakpoint)) {
-	.@{ns}FlexSidePadding {
-		width: @flexSideMaxContentWidth;
-	}
-	.@{ns}FlexSideMargin {
-		width: @flexSideMaxContentWidth;
-	}
+  .@{ns}FlexSidePadding {
+    width: @flexSideMaxContentWidth;
+  }
+  .@{ns}FlexSideMargin {
+    width: @flexSideMaxContentWidth;
+  }
 }

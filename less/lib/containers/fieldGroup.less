@@ -1,48 +1,48 @@
 .@{ns}FieldGroup {
-	// Style
+  // Style
 
-	&:not(:first-of-type) {
-		margin-top: 16px;
-	}
-	&:not(:last-of-type) {
-		margin-bottom: 16px;
-	}
+  &:not(:first-of-type) {
+    margin-top: 16px;
+  }
+  &:not(:last-of-type) {
+    margin-bottom: 16px;
+  }
 
-	&__label {
-		display: block;
-		margin-bottom: 4px;
-	}
-	&__helpText {
-		margin: 0;
-		font-size: 80%;
-		color: @gray;
-	}
+  &__label {
+    display: block;
+    margin-bottom: 4px;
+  }
+  &__helpText {
+    margin: 0;
+    font-size: 80%;
+    color: @gray;
+  }
 
-	// Option
+  // Option
 
-	&.isHazarding {
-		.@{ns}FieldGroup__label {
-			color: @brandHazarding;
-		}
-		.@{ns}FieldGroup__helpText {
-			color: @brandHazarding;
-		}
+  &.isHazarding {
+    .@{ns}FieldGroup__label {
+      color: @brandHazarding;
+    }
+    .@{ns}FieldGroup__helpText {
+      color: @brandHazarding;
+    }
 
-		// Specialize
+    // Specialize
 
-		.@{ns}FieldGroup__child {
-			&.@{ns}InputText, .@{ns}InputText,
-			&.@{ns}InputSelect, .@{ns}InputSelect,
-			&.@{ns}Output, .@{ns}Output {
-				border-color: @brandHazarding;
-			}
-		}
-	}
+    .@{ns}FieldGroup__child {
+      &.@{ns}InputText, .@{ns}InputText,
+      &.@{ns}InputSelect, .@{ns}InputSelect,
+      &.@{ns}Output, .@{ns}Output {
+        border-color: @brandHazarding;
+      }
+    }
+  }
 
-	&.isRequired {
-		.@{ns}FieldGroup__label:after {
-			content: '*';
-			color: @brandHazarding;
-		}
-	}
+  &.isRequired {
+    .@{ns}FieldGroup__label:after {
+      content: '*';
+      color: @brandHazarding;
+    }
+  }
 }
