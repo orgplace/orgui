@@ -28,5 +28,10 @@ headerLead(TITLE, function () {
   <?php displayCase('card/shorthand'); ?>
 </section>
 
+<section class="ouiFlexSideMargin sampleSection">
+  <h3>Colors</h3>
+  <?php displayCase('card/colors'); ?>
+</section>
+
 <?php
 });
