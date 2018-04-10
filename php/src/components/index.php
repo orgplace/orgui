@@ -41,7 +41,6 @@ class SampleItem
   new SampleItem("Loading Spinner", "loadingSpinner.html"),
   new SampleItem("Overlay", "overlay.html"),
   new SampleItem("Pack", "pack.html"),
-  new SampleItem("Panel", "panel.html"),
   new SampleItem("Switch", "switch.html"),
   new SampleItem("Table", "table.html"),
 ];

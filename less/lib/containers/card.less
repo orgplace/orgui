@@ -4,7 +4,7 @@
 .@{ns}Card {
   // Mixins
 
-  .colorPanel(@color) {
+  .colorCard(@color) {
     background-color: @color;
     border-color: @color;
     color: #fff;
@@ -22,10 +22,10 @@
 
   // Option
 
-  &.isPrimary {.colorPanel(@brandPrimary);}
-  &.isSuccess {.colorPanel(@brandSuccess);}
-  &.isHazarding {.colorPanel(@brandHazarding);}
-  &.isWarning {.colorPanel(@brandWarning);}
+  &.isPrimary {.colorCard(@brandPrimary);}
+  &.isSuccess {.colorCard(@brandSuccess);}
+  &.isHazarding {.colorCard(@brandHazarding);}
+  &.isWarning {.colorCard(@brandWarning);}
 
   &>.@{ns}CardItem {
     padding: (@cardPadding / 2) @cardPadding;
