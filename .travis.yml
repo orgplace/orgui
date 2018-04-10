@@ -11,7 +11,7 @@ addons:
       - python3
       - python3-pip
       - openjdk-8-jre-headless
-  ssh_known_hosts: orgplace.f5.si
+  ssh_known_hosts: orgplace.tk
 
 install:
 - pip install --user Pygments
@@ -36,6 +36,6 @@ before_deploy:
 deploy:
   provider: script
   skip_cleanup: true
-  script: rsync -azvr --delete --chmod=D755,F644 dist/ orgplace@orgplace.f5.si:/srv/master/_/ui/
+  script: rsync -azvr --delete --chmod=D755,F644 dist/ orgplace@orgplace.tk:/srv/master/_/ui/
   on:
     branch: master
