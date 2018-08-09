@@ -43,6 +43,7 @@ html5(1, TITLE . ' | Org UI', function () {
   }
 
   $items = [
+    new SampleItem("Assist", "assist.html"),
     new SampleItem("Button", "button.html"),
     new SampleItem("Breadcrumb", "breadcrumb.html"),
     new SampleItem("Card", "card.html"),
