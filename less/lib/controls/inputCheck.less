@@ -8,11 +8,14 @@
     width: 0;
     margin-right: -4px;
   }
+  &__input:focus + &__text {
+    outline: 1px dotted @outlineColor;
+  }
   &__text {
     padding-left: 20px;
     position: relative;
   }
-  &__text:before{
+  &__text:before {
     content: "";
     display: block;
     position: absolute;
