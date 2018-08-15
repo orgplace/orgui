@@ -31,6 +31,8 @@ html5(0, _('Org UI'), function () {
   <h3>JavaScript</h3>
 
   <div class="ouiCodeBlock"><pre><span></span><span class="nt">&lt;script</span> <span class="na">src=</span><span class="s">&quot;<script>document.write(location.toString().replace(/index(?:\.html)?$/, ''));</script>js/0.1/orgui-js.js&quot;</span> <span class="na">defer</span><span class="nt">&gt;&lt;/script&gt;</span></pre></div>
+
+  <p>Global object <code class="ouiCode">orgUi</code> is used as a namespace.</p>
 </section>
 
 <?php
