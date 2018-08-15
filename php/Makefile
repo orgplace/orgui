@@ -34,13 +34,14 @@ all: $(TARGETS)
 
 $(TARGET_DIR)/%.html: $(SOURCE_DIR)/%.php $(LIB_SOURCES) $(SAMPLE_TARGETS)
 	-mkdir -p $(dir $@)
-	php $< | html-minifier $(HTML_MINIFIER_OPT) > $@
+	# php $< | html-minifier $(HTML_MINIFIER_OPT) > $@
+	php $< > $@
 
 $(SAMPLE_HTML_DIR)/%.highlite.html: $(SAMPLE_HTML_DIR)/%.html
-	pygmentize -f html -P 'cssclass=ouiCodeBlock' $< > $@
+	pygmentize -l html -f html -P 'cssclass=ouiCodeBlock' $< > $@
 
 $(SAMPLE_JS_DIR)/%.highlite.html: $(SAMPLE_JS_DIR)/%.js
-	pygmentize -f html -P 'cssclass=ouiCodeBlock' $< > $@
+	pygmentize -l js -f html -P 'cssclass=ouiCodeBlock' $< > $@
 
 clean:
 	-rm -rf $(TARGET_DIR)
