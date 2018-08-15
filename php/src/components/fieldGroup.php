@@ -39,5 +39,10 @@ Field Groupはラベル付けられたコンポーネントを表すコンテナ
   <?php displayCase('fieldGroup/error'); ?>
 </section>
 
+<section class="ouiFlexSideMargin sampleSection">
+  <h3>JavaScript</h3>
+  <?php displayJsCase('fieldGroup/js'); ?>
+</section>
+
 <?php
 });

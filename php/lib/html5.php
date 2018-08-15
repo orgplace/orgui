@@ -13,7 +13,7 @@ function html5($self_depth, $title, $ext_head, $body)
   <link rel="stylesheet" href="<?=relpath('css/0.1/orgui.css', $self_depth)?>">
   <link rel="stylesheet" href="<?=relpath('css/0.1/orgui-coding.css', $self_depth)?>">
   <link rel="stylesheet" href="<?=relpath('css/demo.css', $self_depth)?>">
-  <script src="<?=relpath('js/orgui-js.js', $self_depth)?>" async></script>
+  <script src="<?=relpath('js/orgui-js.js', $self_depth)?>"></script>
 <?php $ext_head(); ?>
 </head>
 <body>

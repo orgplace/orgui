@@ -10,7 +10,11 @@ SAMPLE_HTML_DIR = sample-html
 SAMPLE_HTML_SOURCES = $(shell find $(SAMPLE_HTML_DIR) -type f -name '*.html' ! -name '*.highlite.html')
 SAMPLE_HTML_TARGETS =  $(patsubst $(SAMPLE_HTML_DIR)/%.html,$(SAMPLE_HTML_DIR)/%.highlite.html,$(SAMPLE_HTML_SOURCES))
 
-SAMPLE_TARGETS = $(SAMPLE_HTML_TARGETS)
+SAMPLE_JS_DIR = sample-js
+SAMPLE_JS_SOURCES = $(shell find $(SAMPLE_JS_DIR) -type f -name '*.js' ! -name '*.highlite.html')
+SAMPLE_JS_TARGETS = $(patsubst $(SAMPLE_JS_DIR)/%.js,$(SAMPLE_JS_DIR)/%.highlite.html,$(SAMPLE_JS_SOURCES))
+
+SAMPLE_TARGETS = $(SAMPLE_HTML_TARGETS) $(SAMPLE_JS_TARGETS)
 
 HTML_MINIFIER_OPT += --collapse-whitespace
 HTML_MINIFIER_OPT += --minify-css
@@ -33,6 +37,9 @@ $(TARGET_DIR)/%.html: $(SOURCE_DIR)/%.php $(LIB_SOURCES) $(SAMPLE_TARGETS)
 	php $< | html-minifier $(HTML_MINIFIER_OPT) > $@
 
 $(SAMPLE_HTML_DIR)/%.highlite.html: $(SAMPLE_HTML_DIR)/%.html
+	pygmentize -f html -P 'cssclass=ouiCodeBlock' $< > $@
+
+$(SAMPLE_JS_DIR)/%.highlite.html: $(SAMPLE_JS_DIR)/%.js
 	pygmentize -f html -P 'cssclass=ouiCodeBlock' $< > $@
 
 clean:
