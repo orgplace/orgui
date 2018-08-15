@@ -1,8 +1,8 @@
 <?php
 
-// strict error bailout
 function strict_error_handler($errno, $errstr, $errfile, $errline)
 {
-    die("STRICT: {$errno} {$errstr} {$errfile} {$errline} ".PHP_EOL);
+    fwrite(STDERR, "\033[1m{$errfile}:{$errline}: \033[1;31merror: {$errstr} ({$errno})\033[0m" . PHP_EOL);
+    exit(1);
 }
 set_error_handler("strict_error_handler");
