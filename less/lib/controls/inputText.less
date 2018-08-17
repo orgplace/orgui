@@ -1,14 +1,8 @@
 .@{ns}InputText {
   padding: 0 8px;
-
   height: 36px;
   line-height: 30px;
   background-color: #fff;
-  border: 1px solid @grayLight;
-  border-radius: 2px;
   color: @grayDarker;
-
-  &:focus {
-    border-color: @brandPrimary;
-  }
+  .focusableBorder();
 }
