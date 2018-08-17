@@ -5,7 +5,7 @@ require('lib/html5.php');
 require('lib/header_lead.php');
 require('lib/navbar.php');
 
-const TITLE = 'Input Text';
+const TITLE = 'Input Group';
 
 html5(1, TITLE . ' | Org UI', function () {
 }, function () {
