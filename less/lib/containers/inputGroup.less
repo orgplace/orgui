@@ -1,0 +1,27 @@
+.@{ns}InputGroup {
+  display: inline-flex;
+
+  border: 1px solid @grayLight;
+  border-radius: 2px;
+
+  &:focus-within {
+    border-color: @brandPrimary;
+  }
+
+  &>* {
+    border: none;
+  }
+}
+
+.ouiInputGroupText {
+  line-height: 36px;
+  height: 36px;
+  background-color: #fff;
+  color: @grayDarker;
+}
+.ouiInputGroupText:last-child {
+  padding-right: 8px;
+}
+.ouiInputGroupText:first-child {
+  padding-left: 8px;
+}
