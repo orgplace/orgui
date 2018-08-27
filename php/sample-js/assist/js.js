@@ -1,13 +1,13 @@
-const assist = orgUi.components.Assist.from(document.getElementById('jsSample'));
-assist.addEventListener('input', event => {
-  assist.clearSuggest();
+const assist1 = orgUi.components.Assist.from(document.getElementById('jsSample'));
+assist1.addEventListener('input', event => {
+  assist1.clearSuggest();
   for (let i = 1; i <= 3; i++) {
     const elm = document.createElement('div');
     elm.classList.add('ouiAssistItem');
     elm.textContent = event.target.value + ' ' + i;
-    assist.appendSuggestItem(elm);
+    assist1.appendSuggestItem(elm);
   }
 });
-assist.addEventListener('select', event => {
-  assist.getTarget().value = event.target.textContent;
+assist1.addEventListener('select', event => {
+  assist1.getTarget().value = event.target.textContent;
 });

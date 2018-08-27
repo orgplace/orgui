@@ -1,12 +1,10 @@
 .@{ns}Assist {
   position: relative;
   display: inline-block;
-
-  &__target {
-    line-height: 1;
-  }
+  line-height: 1;
 
   &__suggest {
+    line-height: @line-height;
     position: absolute;
     z-index: @zIndexAssistSuggest;
     min-width: 100%;
