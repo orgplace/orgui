@@ -2,6 +2,10 @@
   position: relative;
   display: inline-block;
 
+  &__target {
+    line-height: 1;
+  }
+
   &__suggest {
     position: absolute;
     z-index: @zIndexAssistSuggest;
@@ -11,6 +15,9 @@
     background-color: #fff;
   }
 
+  &__suggestHeader {
+    border-bottom: 1px solid @grayLighter;
+  }
   &__suggestFooter {
     border-top: 1px solid @grayLighter;
   }
