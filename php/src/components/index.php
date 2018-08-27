@@ -54,6 +54,7 @@ html5(1, TITLE . ' | Org UI', function () {
     new SampleItem("Input Text", "inputText.html"),
     new SampleItem("Loading Spinner", "loadingSpinner.html"),
     new SampleItem("Overlay", "overlay.html"),
+    new SampleItem("Output", "output.html"),
     new SampleItem("Pack", "pack.html"),
     new SampleItem("Switch", "switch.html"),
     new SampleItem("Table", "table.html"),

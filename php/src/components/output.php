@@ -1,0 +1,27 @@
+<?php
+require('lib/init.php');
+require('lib/display_case.php');
+require('lib/html5.php');
+require('lib/header_lead.php');
+require('lib/navbar.php');
+
+const TITLE = 'Output';
+
+html5(1, TITLE . ' | Org UI', function () {
+}, function () {
+    navbar(1); ?>
+
+<?php
+headerLead(TITLE, function () {
+        ?>
+Output は、入力系のコンポーネントと見た目の整合性をとりつつ、計算結果を表示するためのコンポーネントです。
+<?php
+    }); ?>
+
+<section class="ouiFlexSideMargin sampleSection">
+  <h3>Basic</h3>
+  <?php displayCase('output/basic'); ?>
+</section>
+
+<?php
+});
