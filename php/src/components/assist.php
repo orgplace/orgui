@@ -52,7 +52,7 @@ Assistは、入力補完を実装するためのコンポーネントです。
 <section class="ouiFlexSideMargin sampleSection">
   <h3>Search &amp; Select</h3>
   <div class="displayCase">
-    <div class="displayCase__sample" style="padding-bottom: 124px;">
+    <div class="displayCase__sample" style="padding-bottom: 169px;">
       <?php require('sample-html/assist/jsSearchSelect.html'); ?>
       <script><?php require('sample-js/assist/jsSearchSelect.js'); ?></script>
     </div>
