@@ -36,4 +36,12 @@
 @brandHazardingLighter: lighten(@brandHazarding, 15%);
 @brandWarningLighter: lighten(@brandWarning, 15%);
 
+/*
+ * grayLighter の背景でもコントラストが確保されるように、
+ * リンクだけ特別な色に設定した。
+ */
+@linkColor: #005380;
+@linkActiveColor: lighten(@linkColor, 5%);
+@linkVisitedColor: darken(@linkColor, 5%);
+
 @outlineColor: @gray;
