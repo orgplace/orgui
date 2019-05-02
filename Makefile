@@ -5,16 +5,16 @@ TARGET_DIR = dist
 HTML_MODULES = php
 CSS_MODULES = less
 JS_MODULES = js-gcl
-MODULES = $(HTML_MODULES) $(CSS_MODULES) $(JS_MODULES)
+MODULES = src react $(HTML_MODULES) $(CSS_MODULES) $(JS_MODULES)
 
 .DELETE_ON_ERROR:
 
 # Delete the default suffixes for old-fashioned suffix rules
 .SUFFIXES:
 
-.PHONY: all clean watch src $(MODULES)
+.PHONY: all clean watch $(MODULES)
 
-all: src $(MODULES)
+all: $(MODULES)
 
 clean:
 	-rm -rf $(TARGET_DIR)
@@ -29,6 +29,9 @@ watch:
 src:
 	rsync -au --exclude ".gitkeep" "src/" "$(TARGET_DIR)/"
 
+react:
+	+$(MAKE) -C "$@" -e "TARGET_DIR=$(abspath $(TARGET_DIR)/react)"
+
 $(HTML_MODULES):
 	+$(MAKE) -C "$@" -e "TARGET_DIR=$(abspath $(TARGET_DIR))"
 
@@ -37,4 +40,3 @@ $(CSS_MODULES):
 
 $(JS_MODULES):
 	+$(MAKE) -C "$@" -e "TARGET_DIR=$(abspath $(TARGET_DIR)/js)"
-

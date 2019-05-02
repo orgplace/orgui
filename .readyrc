@@ -4,6 +4,7 @@
 # Please install https://github.com/utisam/ready
 
 check_command "make"
+check_command "rsync"
 
 check_command "node"
 check_command "npm"
