@@ -1,5 +1,5 @@
 import React from 'react';
-import OuiButton from './orgui/button';
+import OuiButton from './orgui/Button';
 
 const App: React.FC = () => {
   return (
