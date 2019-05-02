@@ -16,8 +16,11 @@ TARGETS = $(patsubst $(SOURCE_DIR)/%,$(TARGET_DIR)/%,$(SOURCES))
 
 all: lint $(TARGETS) test sources
 
-lint: $(SOURCES) $(LIB_SOURCES)
+lint: node_modules $(SOURCES) $(LIB_SOURCES)
 	npm run lint -- $(SOURCE_DIR) $(LIB_DIR)
+
+node_modules: package.json
+	npm i
 
 CLOSURE_COMPILER = closure-compiler/compiler.jar
 CLOSURE_COMPILATION_LEVEL = ADVANCED_OPTIMIZATIONS

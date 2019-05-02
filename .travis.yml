@@ -15,7 +15,7 @@ addons:
 install:
 - pip install --user Pygments
 - nvm install --lts
-- npm i -g less@v2.7.3 less-plugin-autoprefix less-plugin-clean-css less-plugin-glob less-plugin-csscomb html-minifier html-validator-cli
+- npm i -g less less-plugin-autoprefix less-plugin-clean-css less-plugin-glob less-plugin-csscomb globby html-minifier
 - cd js-gcl && npm i && cd ..
 
 before_script:
