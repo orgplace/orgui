@@ -15,10 +15,13 @@ all: $(TARGET_DIR)
 
 $(TARGET_DIR): node_modules $(SOURCES)
 	npm run build
-	[ "$(TARGET_DIR)" = "$(REACT_OUT)" ] || mv "$(REACT_OUT)" "$(TARGET_DIR)"
+ifneq ($(TARGET_DIR),build)
+	rsync -avr --delete build/ $(TARGET_DIR)
+endif
 
 node_modules: package.json
 	npm i
+	touch $@
 
 clean:
 	-rm -rf $(TARGET_DIR)

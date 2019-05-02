@@ -14,8 +14,8 @@
     "typescript": "3.4.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "ln -sfT ../../dist/css public/css && REACT_APP_CSS_BASE='' react-scripts start",
+    "build": "rm -f public/css; REACT_APP_CSS_BASE=.. react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
