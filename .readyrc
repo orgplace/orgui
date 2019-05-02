@@ -16,3 +16,4 @@ check_npm_package "globby"
 check_npm_package "html-minifier"
 
 check_command "php"
+check_command "pygmentize"
