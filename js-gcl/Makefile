@@ -21,6 +21,7 @@ lint: node_modules $(SOURCES) $(LIB_SOURCES)
 
 node_modules: package.json
 	npm i
+	touch $@
 
 CLOSURE_COMPILER = closure-compiler/compiler.jar
 CLOSURE_COMPILATION_LEVEL = ADVANCED_OPTIMIZATIONS
