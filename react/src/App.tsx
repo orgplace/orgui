@@ -1,10 +1,11 @@
 import React from 'react';
+import OuiButton from './orgui/button';
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <button className="ouiButton">Button</button>
+        <OuiButton className="isPrimary ouiButton">Button</OuiButton>
       </header>
     </div>
   );
