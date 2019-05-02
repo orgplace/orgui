@@ -15,7 +15,6 @@ install:
 - pip3 install --user Pygments
 - nvm install --lts
 - npm i -g less less-plugin-autoprefix less-plugin-clean-css less-plugin-glob less-plugin-csscomb globby html-minifier
-- cd js-gcl && npm i && cd ..
 
 before_script:
 - export PATH=$HOME/.local/bin:$PATH
