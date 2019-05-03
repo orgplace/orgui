@@ -6,19 +6,17 @@ interface OuiInputCheckAttributes {
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-class OuiInputCheck extends React.Component<React.HTMLAttributes<HTMLElement> & OuiInputCheckAttributes, {}> {
-  render() {
-    const {checked, onChange, children, ...labelProps} = this.props;
-    return (
-      <label {...labelProps} className={classNames(
-        'ouiInputCheck',
-        this.props.className,
-      )}>
-        <input type="checkbox" className="ouiInputCheck__input" checked={checked} onChange={onChange} />
-        <span className="ouiInputCheck__text">{children}</span>
-      </label>
-    );
-  }
+const OuiInputCheck: React.FC<React.HTMLAttributes<HTMLElement> & OuiInputCheckAttributes> = (props) => {
+  const {checked, onChange, children, ...labelProps} = props;
+  return (
+    <label {...labelProps} className={classNames(
+      'ouiInputCheck',
+      props.className,
+    )}>
+      <input type="checkbox" className="ouiInputCheck__input" checked={checked} onChange={onChange} />
+      <span className="ouiInputCheck__text">{children}</span>
+    </label>
+  );
 }
 
 export { OuiInputCheck };
