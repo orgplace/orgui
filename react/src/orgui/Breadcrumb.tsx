@@ -12,10 +12,8 @@ class OuiBreadcrumbItem extends React.Component<React.AnchorHTMLAttributes<HTMLA
   }
 }
 
-type OuiBreadcrumbItemNode = OuiBreadcrumbItem | React.ReactFragment | React.ReactPortal | boolean | null | undefined;
-
 interface OuiBreadcrumbAttributes {
-  children?: OuiBreadcrumbItemNode
+  children?: React.ReactElement<OuiBreadcrumbItem>[] | React.ReactElement<OuiBreadcrumbItem>
 }
 
 const OuiBreadcrumb: React.FC<React.HTMLAttributes<HTMLElement> & OuiBreadcrumbAttributes> = (props) => (
