@@ -1,10 +1,10 @@
-export enum ColorVariation {
+export enum OuiColorVariation {
   Primary = "isPrimary",
   Success = "isSuccess",
   Hazarding = "isHazarding",
   Warning = "isWarning",
 }
 
-export interface ColorVariationAttributes {
-  colorVariation?: ColorVariation;
+export interface OuiColorVariationAttributes {
+  colorVariation?: OuiColorVariation;
 }

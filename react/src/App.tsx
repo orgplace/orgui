@@ -1,13 +1,24 @@
 import React from 'react';
-import { ColorVariation } from './orgui';
-import OuiButton from './orgui/Button';
+import { OuiColorVariation } from './orgui';
+import { OuiBreadcrumb, OuiBreadcrumbItem } from './orgui/Breadcrumb';
+import { OuiButton } from './orgui/Button';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <OuiButton colorVariation={ColorVariation.Primary}>Button</OuiButton>
-      </header>
+    <div>
+      <h1>Components</h1>
+      <div>
+        <h2>Button</h2>
+        <OuiButton colorVariation={OuiColorVariation.Primary}>Button</OuiButton>
+      </div>
+      <div>
+        <h2>Breadcrumb</h2>
+        <OuiBreadcrumb>
+          <OuiBreadcrumbItem href="#">A</OuiBreadcrumbItem>
+          <OuiBreadcrumbItem href="#">B</OuiBreadcrumbItem>
+          <OuiBreadcrumbItem href="#">C</OuiBreadcrumbItem>
+        </OuiBreadcrumb>
+      </div>
     </div>
   );
 }
