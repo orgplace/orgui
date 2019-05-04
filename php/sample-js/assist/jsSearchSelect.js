@@ -3,6 +3,7 @@ const $targetOutput = assist2.getTarget().getElementsByClassName('ouiOutput')[0]
 const $searchInput = document.getElementById('jsSearchSelectSample__searchInput');
 const $suggest = assist2.getSuggest();
 assist2.addEventListener('blur', event => {
+  // In default, always hide $suggest on blur.
   event.preventDefault();
 
   // Use timeout to delay examination of activeElement until after blur/focus
