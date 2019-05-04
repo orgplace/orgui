@@ -8,6 +8,7 @@ import { OuiInputCheck } from './orgui/InputCheck';
 import { OuiInputSelect } from './orgui/InputSelect';
 import { OuiInputText } from './orgui/InputText';
 import { OuiOutput } from './orgui/Output';
+import { OuiSwitch } from './orgui/Switch';
 
 const ButtonDemo: React.FC = () => (
   <div>
@@ -120,6 +121,27 @@ class InputTextDemo extends React.Component<{}, any> {
   }
 }
 
+class SwitchDemo extends React.Component<{}, any> {
+  constructor(props: Readonly<{}>) {
+    super(props)
+    this.state = {checked: false};
+  }
+
+  onChange(e: React.ChangeEvent<HTMLInputElement>) {
+    this.setState({checked: !this.state.checked});
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>Switch</h2>
+        <OuiSwitch checked={this.state.checked} onChange={this.onChange.bind(this)} /><br/>
+        <OuiOutput>{this.state.checked ? "checked": "not checked"}</OuiOutput>
+      </div>
+    );
+  }
+}
+
 const App: React.FC = () => (
   <div style={{margin: "0 16px"}}>
     <h1>Components</h1>
@@ -130,6 +152,7 @@ const App: React.FC = () => (
     <InputCheckDemo />
     <InputSelectDemo />
     <InputTextDemo />
+    <SwitchDemo />
   </div>
 );
 
