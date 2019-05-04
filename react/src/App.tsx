@@ -3,19 +3,31 @@ import { OuiColorVariation } from './orgui';
 import { OuiBreadcrumb, OuiBreadcrumbItem } from './orgui/Breadcrumb';
 import { OuiButton } from './orgui/Button';
 import { OuiCard, OuiCardItem, OuiShorthandCard } from './orgui/Card';
+import { OuiFieldGroup } from './orgui/FieldGroup';
 import { OuiInputCheck } from './orgui/InputCheck';
+import { OuiInputText } from './orgui/InputText';
+import { OuiOutput } from './orgui/Output';
 
 class App extends React.Component<{}, any> {
   constructor(props: Readonly<{}>) {
     super(props);
     this.state = {
       checked: false,
+      text: "",
     };
   }
 
-  onChange(e: React.ChangeEvent<HTMLInputElement>) {
+  onCheckChange(e: React.ChangeEvent<HTMLInputElement>) {
     this.setState({
+      ...this.state,
       checked: !this.state.checked,
+    });
+  }
+
+  onTextChange(e: React.ChangeEvent<HTMLInputElement>) {
+    this.setState({
+      ...this.state,
+      text: e.target.value,
     });
   }
 
@@ -45,9 +57,21 @@ class App extends React.Component<{}, any> {
           </OuiShorthandCard>
         </div>
         <div>
+          <h2>FieldGroup</h2>
+          <OuiFieldGroup label="Label" required>
+            <OuiInputText className={OuiFieldGroup.classNames.child} />
+            <div className={OuiFieldGroup.classNames.helpText}>help</div>
+          </OuiFieldGroup>
+        </div>
+        <div>
           <h2>InputCheck</h2>
-          <OuiInputCheck checked={this.state.checked} onChange={this.onChange.bind(this)}>test</OuiInputCheck><br/>
-          {this.state.checked ? "checked": "not checked"}
+          <OuiInputCheck checked={this.state.checked} onChange={this.onCheckChange.bind(this)}>test</OuiInputCheck><br/>
+          <OuiOutput>{this.state.checked ? "checked": "not checked"}</OuiOutput>
+        </div>
+        <div>
+          <h2>InputText</h2>
+          <OuiInputText value={this.state.text} onChange={this.onTextChange.bind(this)} /><br/>
+          <OuiOutput>{this.state.text}</OuiOutput>
         </div>
       </div>
     );
