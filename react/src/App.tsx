@@ -5,77 +5,132 @@ import { OuiButton } from './orgui/Button';
 import { OuiCard, OuiCardItem, OuiShorthandCard } from './orgui/Card';
 import { OuiFieldGroup } from './orgui/FieldGroup';
 import { OuiInputCheck } from './orgui/InputCheck';
+import { OuiInputSelect } from './orgui/InputSelect';
 import { OuiInputText } from './orgui/InputText';
 import { OuiOutput } from './orgui/Output';
 
-class App extends React.Component<{}, any> {
+const ButtonDemo: React.FC = () => (
+  <div>
+    <h2>Button</h2>
+    <OuiButton colorVariation={OuiColorVariation.Primary}>Button</OuiButton>
+  </div>
+);
+
+const BreadcrumbDemo: React.FC = () => (
+  <div>
+    <h2>Breadcrumb</h2>
+    <OuiBreadcrumb>
+      <OuiBreadcrumbItem href="#">A</OuiBreadcrumbItem>
+      <OuiBreadcrumbItem href="#">B</OuiBreadcrumbItem>
+      <OuiBreadcrumbItem href="#">C</OuiBreadcrumbItem>
+    </OuiBreadcrumb>
+  </div>
+);
+
+const CardDemo: React.FC = () => (
+  <div>
+    <h2>Card</h2>
+    <OuiCard>
+      <OuiCardItem>test</OuiCardItem>
+    </OuiCard>
+    <OuiShorthandCard colorVariation={OuiColorVariation.Warning}>
+      Warning
+    </OuiShorthandCard>
+  </div>
+);
+
+const FieldGroupDemo: React.FC = () => (
+  <div>
+    <h2>FieldGroup</h2>
+    <OuiFieldGroup label="Label" required>
+      <OuiInputText className={OuiFieldGroup.classNames.child} />
+      <div className={OuiFieldGroup.classNames.helpText}>help</div>
+    </OuiFieldGroup>
+  </div>
+);
+
+class InputCheckDemo extends React.Component<{}, any> {
   constructor(props: Readonly<{}>) {
-    super(props);
-    this.state = {
-      checked: false,
-      text: "",
-    };
+    super(props)
+    this.state = {checked: false};
   }
 
-  onCheckChange(e: React.ChangeEvent<HTMLInputElement>) {
+  onChange(e: React.ChangeEvent<HTMLInputElement>) {
+    this.setState({checked: !this.state.checked});
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>InputCheck</h2>
+        <OuiInputCheck checked={this.state.checked} onChange={this.onChange.bind(this)}>test</OuiInputCheck><br/>
+        <OuiOutput>{this.state.checked ? "checked": "not checked"}</OuiOutput>
+      </div>
+    );
+  }
+}
+
+class InputSelectDemo extends React.Component<{}, any> {
+  constructor(props: Readonly<{}>) {
+    super(props);
+    this.state = {value: ""};
+  }
+
+  onChange(e: React.ChangeEvent<HTMLSelectElement>) {
     this.setState({
-      ...this.state,
-      checked: !this.state.checked,
+      value: e.target.value,
     });
   }
 
-  onTextChange(e: React.ChangeEvent<HTMLInputElement>) {
+  render() {
+    return (
+      <div>
+        <h2>InputSelect</h2>
+        <OuiInputSelect value={this.state.value} onChange={this.onChange.bind(this)}>
+          <option value=""></option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+        </OuiInputSelect>
+      </div>
+    );
+  }
+}
+
+class InputTextDemo extends React.Component<{}, any> {
+  constructor(props: Readonly<{}>) {
+    super(props)
+    this.state = {text: ""};
+  }
+
+  onChange(e: React.ChangeEvent<HTMLInputElement>) {
     this.setState({
-      ...this.state,
       text: e.target.value,
     });
   }
 
   render() {
     return (
-      <div style={{margin: "0 16px"}}>
-        <h1>Components</h1>
-        <div>
-          <h2>Button</h2>
-          <OuiButton colorVariation={OuiColorVariation.Primary}>Button</OuiButton>
-        </div>
-        <div>
-          <h2>Breadcrumb</h2>
-          <OuiBreadcrumb>
-            <OuiBreadcrumbItem href="#">A</OuiBreadcrumbItem>
-            <OuiBreadcrumbItem href="#">B</OuiBreadcrumbItem>
-            <OuiBreadcrumbItem href="#">C</OuiBreadcrumbItem>
-          </OuiBreadcrumb>
-        </div>
-        <div>
-          <h2>Card</h2>
-          <OuiCard>
-            <OuiCardItem>test</OuiCardItem>
-          </OuiCard>
-          <OuiShorthandCard colorVariation={OuiColorVariation.Warning}>
-            Warning
-          </OuiShorthandCard>
-        </div>
-        <div>
-          <h2>FieldGroup</h2>
-          <OuiFieldGroup label="Label" required>
-            <OuiInputText className={OuiFieldGroup.classNames.child} />
-            <div className={OuiFieldGroup.classNames.helpText}>help</div>
-          </OuiFieldGroup>
-        </div>
-        <div>
-          <h2>InputCheck</h2>
-          <OuiInputCheck checked={this.state.checked} onChange={this.onCheckChange.bind(this)}>test</OuiInputCheck><br/>
-          <OuiOutput>{this.state.checked ? "checked": "not checked"}</OuiOutput>
-        </div>
-        <div>
-          <h2>InputText</h2>
-          <OuiInputText value={this.state.text} onChange={this.onTextChange.bind(this)} /><br/>
-          <OuiOutput>{this.state.text}</OuiOutput>
-        </div>
+      <div>
+        <h2>InputText</h2>
+        <OuiInputText value={this.state.text} onChange={this.onChange.bind(this)} /><br/>
+        <OuiOutput>{this.state.text}</OuiOutput>
       </div>
     );
   }
 }
+
+const App: React.FC = () => (
+  <div style={{margin: "0 16px"}}>
+    <h1>Components</h1>
+    <ButtonDemo />
+    <BreadcrumbDemo />
+    <CardDemo />
+    <FieldGroupDemo />
+    <InputCheckDemo />
+    <InputSelectDemo />
+    <InputTextDemo />
+  </div>
+);
 
 export default App;
