@@ -3,10 +3,11 @@ import React from 'react';
 import { OuiColorVariationAttributes } from '.';
 
 class OuiCardItem extends React.Component<React.HTMLAttributes<HTMLElement>, {}> {
+  static className = 'ouiCardItem';
   render() {
     return (
       <a {...this.props} className={classNames(
-        'ouiCardItem',
+        OuiCardItem.className,
         this.props.className,
       )}>{this.props.children}</a>
     );

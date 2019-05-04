@@ -8,6 +8,7 @@ import { OuiInputCheck } from './orgui/InputCheck';
 import { OuiInputSelect } from './orgui/InputSelect';
 import { OuiInputText } from './orgui/InputText';
 import { OuiOutput } from './orgui/Output';
+import { OuiOverlay } from './orgui/Overlay';
 import { OuiSwitch } from './orgui/Switch';
 
 const ButtonDemo: React.FC = () => (
@@ -142,6 +143,39 @@ class SwitchDemo extends React.Component<{}, any> {
   }
 }
 
+class OverlayDemo extends React.Component<{}, any> {
+  constructor(props: Readonly<{}>) {
+    super(props);
+    this.state = {displayed: false};
+  }
+
+  onClickOpen() {
+    this.setState({displayed: true});
+  }
+  onClickClose() {
+    this.setState({displayed: false});
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>Overlay</h2>
+        <OuiButton onClick={this.onClickOpen.bind(this)}>Open</OuiButton>
+        <OuiOverlay displayed={this.state.displayed}>
+          <OuiCard className="ouiFlexSideMargin">
+            <h2 className={OuiCardItem.className}>Modal</h2>
+            <OuiCardItem>
+              This card is modal on the overlay container.
+            </OuiCardItem>
+            <OuiCardItem style={{textAlign: 'right'}}>
+              <OuiButton onClick={this.onClickClose.bind(this)}>Close</OuiButton>
+            </OuiCardItem>
+          </OuiCard>
+        </OuiOverlay>
+      </div>);
+  }
+}
+
 const App: React.FC = () => (
   <div style={{margin: "0 16px"}}>
     <h1>Components</h1>
@@ -153,6 +187,7 @@ const App: React.FC = () => (
     <InputSelectDemo />
     <InputTextDemo />
     <SwitchDemo />
+    <OverlayDemo />
   </div>
 );
 
