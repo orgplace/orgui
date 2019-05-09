@@ -45,11 +45,13 @@ class Assist extends EventComponent {
 
     delegateEvent($target, this, ['input']);
 
-    $target.addEventListener('keyup', (event) => {
+    $target.addEventListener('keydown', (event) => {
       const key = event.key;
       const up = keyUtil.isUp(key);
       const down = keyUtil.isDown(key);
       if (down || up) {
+        event.preventDefault();
+
         const items = $suggest.getElementsByClassName(AssistItem.ELEMENT_CLASS);
         const itemsLength = items.length;
         if (itemsLength) {

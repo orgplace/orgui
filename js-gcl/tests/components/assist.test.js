@@ -74,19 +74,19 @@ test('Assist', () => {
 
   // Key operations
 
-  $target.dispatchEvent(new window.KeyboardEvent('keyup', {key: 'ArrowDown'}));
+  $target.dispatchEvent(new window.KeyboardEvent('keydown', {key: 'ArrowDown'}));
   selectedOnly($newItem1);
 
-  $target.dispatchEvent(new window.KeyboardEvent('keyup', {key: 'ArrowDown'}));
+  $target.dispatchEvent(new window.KeyboardEvent('keydown', {key: 'ArrowDown'}));
   selectedOnly($newItem2);
 
-  $target.dispatchEvent(new window.KeyboardEvent('keyup', {key: 'ArrowDown'}));
+  $target.dispatchEvent(new window.KeyboardEvent('keydown', {key: 'ArrowDown'}));
   selectedOnly($newItem2);
 
-  $target.dispatchEvent(new window.KeyboardEvent('keyup', {key: 'ArrowUp'}));
+  $target.dispatchEvent(new window.KeyboardEvent('keydown', {key: 'ArrowUp'}));
   selectedOnly($newItem1);
 
-  $target.dispatchEvent(new window.KeyboardEvent('keyup', {key: 'ArrowUp'}));
+  $target.dispatchEvent(new window.KeyboardEvent('keydown', {key: 'ArrowUp'}));
   selectedOnly($newItem1);
 
   // Focus
