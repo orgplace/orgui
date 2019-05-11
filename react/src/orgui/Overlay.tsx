@@ -1,26 +1,19 @@
 import classNames from 'classnames';
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 interface OuiOverlayAttributes {
-  displayed?: boolean,
+  rootElement: Element
 }
 
 const OuiOverlay: React.FC<React.HTMLAttributes<HTMLElement> & OuiOverlayAttributes> = (props) => {
-  let {displayed, style, ...divProps} = props;
-
-  if (!displayed) {
-    if (style) {
-      style.display = 'none';
-    } else {
-      style = {'display': 'none'};
-    }
-  }
-
-  return (
+  const {rootElement, ...divProps} = props
+  return ReactDOM.createPortal(
     <div {...divProps} className={classNames(
       'ouiOverlay',
-      props.className,
-    )} style={style}>{props.children}</div>
+      divProps.className,
+    )}>{divProps.children}</div>,
+    rootElement,
   );
 }
 

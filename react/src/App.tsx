@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { OuiColorVariation } from './orgui';
 import { OuiAssist, OuiAssistItem } from './orgui/Assist';
 import { OuiBreadcrumb, OuiBreadcrumbItem } from './orgui/Breadcrumb';
@@ -12,6 +13,7 @@ import { OuiOutput } from './orgui/Output';
 import { OuiOverlay } from './orgui/Overlay';
 import { OuiSwitch } from './orgui/Switch';
 import keycode from 'keycode';
+import { tsPropertySignature } from '@babel/types';
 
 class AssistDemo extends React.Component<{}, any> {
   constructor(props: Readonly<{}>) {
@@ -201,8 +203,8 @@ class SwitchDemo extends React.Component<{}, any> {
   }
 }
 
-class OverlayDemo extends React.Component<{}, any> {
-  constructor(props: Readonly<{}>) {
+class OverlayDemo extends React.Component<{rootElem: HTMLElement}, any> {
+  constructor(props: Readonly<{rootElem: HTMLElement}>) {
     super(props);
     this.state = {displayed: false};
   }
@@ -219,7 +221,7 @@ class OverlayDemo extends React.Component<{}, any> {
       <div>
         <h2>Overlay</h2>
         <OuiButton onClick={this.onClickOpen.bind(this)}>Open</OuiButton>
-        <OuiOverlay displayed={this.state.displayed}>
+        {this.state.displayed && <OuiOverlay rootElement={this.props.rootElem}>
           <OuiCard className="ouiFlexSideMargin">
             <h2>Modal</h2>
             <div>
@@ -229,12 +231,12 @@ class OverlayDemo extends React.Component<{}, any> {
               <OuiButton onClick={this.onClickClose.bind(this)}>Close</OuiButton>
             </div>
           </OuiCard>
-        </OuiOverlay>
+        </OuiOverlay>}
       </div>);
   }
 }
 
-const App: React.FC = () => (
+const App: React.FC<{rootElem: HTMLElement}> = (props) => (
   <div style={{margin: "0 16px"}}>
     <h1>Components</h1>
     <AssistDemo />
@@ -246,7 +248,7 @@ const App: React.FC = () => (
     <InputSelectDemo />
     <InputTextDemo />
     <SwitchDemo />
-    <OverlayDemo />
+    <OverlayDemo rootElem={props.rootElem} />
   </div>
 );
 
