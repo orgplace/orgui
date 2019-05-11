@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { ReactNode, Children } from 'react';
+import React from 'react';
 import { OuiColorVariationAttributes } from '.';
 
 type OuiCardAttributes = React.HTMLAttributes<HTMLElement> & OuiColorVariationAttributes
@@ -13,7 +13,7 @@ const OuiCard: React.FC<OuiCardAttributes> = (props) => {
       divProps.className,
     )}>{
       React.Children.map(divProps.children, (child) => {
-        const childElm = child as React.ReactElement<any>;
+        const childElm = child as React.ReactElement;
         return React.cloneElement(childElm, {
           className: classNames(childElm.props.className, 'ouiCardItem'),
         })

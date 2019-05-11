@@ -1,5 +1,6 @@
 import React from 'react';
 import { OuiColorVariation } from './orgui';
+import { OuiAssist, OuiAssistItem } from './orgui/Assist';
 import { OuiBreadcrumb, OuiBreadcrumbItem } from './orgui/Breadcrumb';
 import { OuiButton } from './orgui/Button';
 import { OuiCard, OuiShorthandCard } from './orgui/Card';
@@ -10,6 +11,63 @@ import { OuiInputText } from './orgui/InputText';
 import { OuiOutput } from './orgui/Output';
 import { OuiOverlay } from './orgui/Overlay';
 import { OuiSwitch } from './orgui/Switch';
+import keycode from 'keycode';
+
+class AssistDemo extends React.Component<{}, any> {
+  constructor(props: Readonly<{}>) {
+    super(props)
+    this.state = {
+      text: "",
+      suggests: [],
+      selected: null,
+    };
+  }
+
+  onChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const text = e.target.value;
+    this.setState({
+      text: text,
+      suggests: text ? [...Array(3)].map((_, idx) => text + " " +idx) : [],
+    });
+  }
+
+  onKeyDown(event: React.KeyboardEvent<HTMLElement>) {
+    const nextSelected = OuiAssist.nextSelected(
+      this.state.selected,
+      this.state.suggests.length,
+      keycode.isEventKey(event.nativeEvent, 'up'),
+      keycode.isEventKey(event.nativeEvent, 'down'),
+    );
+    let nextText = this.state.text;
+    if (nextSelected !== null) {
+      event.preventDefault();
+      nextText = this.state.suggests[nextSelected];
+    }
+
+    this.setState({
+      text: nextText,
+      selected: nextSelected,
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>Assist</h2>
+        <OuiAssist
+          suggests={this.state.suggests}
+          renderSuggest={(s: string, idx: number) => (
+            <OuiAssistItem key={idx} selected={idx === this.state.selected}>{s}</OuiAssistItem>
+          )}
+        >
+          <OuiInputText value={this.state.text}
+            onChange={this.onChange.bind(this)}
+            onKeyDown={this.onKeyDown.bind(this)} />
+        </OuiAssist>
+      </div>
+    );
+  }
+}
 
 const ButtonDemo: React.FC = () => (
   <div>
@@ -179,6 +237,7 @@ class OverlayDemo extends React.Component<{}, any> {
 const App: React.FC = () => (
   <div style={{margin: "0 16px"}}>
     <h1>Components</h1>
+    <AssistDemo />
     <ButtonDemo />
     <BreadcrumbDemo />
     <CardDemo />
