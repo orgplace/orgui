@@ -104,9 +104,8 @@ const CardDemo: React.FC = () => (
 const FieldGroupDemo: React.FC = () => (
   <div>
     <h2>FieldGroup</h2>
-    <OuiFieldGroup label="Label" required>
-      <OuiInputText className={OuiFieldGroup.classNames.child} />
-      <div className={OuiFieldGroup.classNames.helpText}>help</div>
+    <OuiFieldGroup label={<span style={{fontWeight: "bold"}}>Label</span>} required helpText="help">
+      <OuiInputText />
     </OuiFieldGroup>
   </div>
 );
@@ -203,8 +202,8 @@ class SwitchDemo extends React.Component<{}, any> {
   }
 }
 
-class OverlayDemo extends React.Component<{rootElem: HTMLElement}, any> {
-  constructor(props: Readonly<{rootElem: HTMLElement}>) {
+class OverlayDemo extends React.Component<{rootElem: Element}, any> {
+  constructor(props: Readonly<{rootElem: Element}>) {
     super(props);
     this.state = {displayed: false};
   }
@@ -236,7 +235,7 @@ class OverlayDemo extends React.Component<{rootElem: HTMLElement}, any> {
   }
 }
 
-const App: React.FC<{rootElem: HTMLElement}> = (props) => (
+const App: React.FC<{rootElem: Element}> = (props) => (
   <div style={{margin: "0 16px"}}>
     <h1>Components</h1>
     <AssistDemo />
