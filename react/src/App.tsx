@@ -2,7 +2,7 @@ import React from 'react';
 import { OuiColorVariation } from './orgui';
 import { OuiBreadcrumb, OuiBreadcrumbItem } from './orgui/Breadcrumb';
 import { OuiButton } from './orgui/Button';
-import { OuiCard, OuiCardItem, OuiShorthandCard } from './orgui/Card';
+import { OuiCard, OuiShorthandCard } from './orgui/Card';
 import { OuiFieldGroup } from './orgui/FieldGroup';
 import { OuiInputCheck } from './orgui/InputCheck';
 import { OuiInputSelect } from './orgui/InputSelect';
@@ -33,7 +33,7 @@ const CardDemo: React.FC = () => (
   <div>
     <h2>Card</h2>
     <OuiCard>
-      <OuiCardItem>test</OuiCardItem>
+      <div>test</div>
     </OuiCard>
     <OuiShorthandCard colorVariation={OuiColorVariation.Warning}>
       Warning
@@ -163,13 +163,13 @@ class OverlayDemo extends React.Component<{}, any> {
         <OuiButton onClick={this.onClickOpen.bind(this)}>Open</OuiButton>
         <OuiOverlay displayed={this.state.displayed}>
           <OuiCard className="ouiFlexSideMargin">
-            <h2 className={OuiCardItem.className}>Modal</h2>
-            <OuiCardItem>
+            <h2>Modal</h2>
+            <div>
               This card is modal on the overlay container.
-            </OuiCardItem>
-            <OuiCardItem style={{textAlign: 'right'}}>
+            </div>
+            <div style={{textAlign: 'right'}}>
               <OuiButton onClick={this.onClickClose.bind(this)}>Close</OuiButton>
-            </OuiCardItem>
+            </div>
           </OuiCard>
         </OuiOverlay>
       </div>);

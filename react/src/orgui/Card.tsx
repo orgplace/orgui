@@ -1,35 +1,28 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { ReactNode, Children } from 'react';
 import { OuiColorVariationAttributes } from '.';
 
-class OuiCardItem extends React.Component<React.HTMLAttributes<HTMLElement>, {}> {
-  static className = 'ouiCardItem';
-  render() {
-    return (
-      <a {...this.props} className={classNames(
-        OuiCardItem.className,
-        this.props.className,
-      )}>{this.props.children}</a>
-    );
-  }
-}
+type OuiCardAttributes = React.HTMLAttributes<HTMLElement> & OuiColorVariationAttributes
 
-interface OuiCardAttributes {
-  children?: React.ReactElement<OuiCardItem>[] | React.ReactElement<OuiCardItem>
-}
-
-const OuiCard: React.FC<React.HTMLAttributes<HTMLElement> & OuiColorVariationAttributes & OuiCardAttributes> = (props) => {
+const OuiCard: React.FC<OuiCardAttributes> = (props) => {
   const {colorVariation, ...divProps} = props;
   return (
     <div {...divProps} className={classNames(
       'ouiCard',
       colorVariation,
       divProps.className,
-    )}>{divProps.children}</div>
+    )}>{
+      React.Children.map(divProps.children, (child) => {
+        const childElm = child as React.ReactElement<any>;
+        return React.cloneElement(childElm, {
+          className: classNames(childElm.props.className, 'ouiCardItem'),
+        })
+      })
+    }</div>
   );
 }
 
-const OuiShorthandCard: React.FC<React.HTMLAttributes<HTMLElement> & OuiColorVariationAttributes> = (props) => {
+const OuiShorthandCard: React.FC<OuiCardAttributes> = (props) => {
   const {colorVariation, ...divProps} = props;
   return (
     <div {...divProps} className={classNames(
@@ -40,4 +33,4 @@ const OuiShorthandCard: React.FC<React.HTMLAttributes<HTMLElement> & OuiColorVar
   );
 }
 
-export { OuiCard, OuiCardItem, OuiShorthandCard };
+export { OuiCard, OuiShorthandCard };
