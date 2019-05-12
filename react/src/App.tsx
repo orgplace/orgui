@@ -1,16 +1,16 @@
 import React from 'react';
-import { OuiColorVariation } from './orgui';
-import { OuiAssist, OuiAssistItem } from './orgui/Assist';
-import { OuiBreadcrumb, OuiBreadcrumbItem } from './orgui/Breadcrumb';
-import { OuiButton } from './orgui/Button';
-import { OuiCard, OuiShorthandCard } from './orgui/Card';
-import { OuiFieldGroup } from './orgui/FieldGroup';
-import { OuiInputCheck } from './orgui/InputCheck';
-import { OuiInputSelect } from './orgui/InputSelect';
-import { OuiInputText } from './orgui/InputText';
-import { OuiOutput } from './orgui/Output';
-import { OuiOverlay } from './orgui/Overlay';
-import { OuiSwitch } from './orgui/Switch';
+import { OuiColorVariation } from '@orgplace/orgui-react';
+import { OuiAssist, OuiAssistItem } from '@orgplace/orgui-react/Assist';
+import { OuiBreadcrumb, OuiBreadcrumbItem } from '@orgplace/orgui-react/Breadcrumb';
+import { OuiButton } from '@orgplace/orgui-react/Button';
+import { OuiCard, OuiShorthandCard } from '@orgplace/orgui-react/Card';
+import { OuiFieldGroup } from '@orgplace/orgui-react/FieldGroup';
+import { OuiInputCheck } from '@orgplace/orgui-react/InputCheck';
+import { OuiInputSelect } from '@orgplace/orgui-react/InputSelect';
+import { OuiInputText } from '@orgplace/orgui-react/InputText';
+import { OuiOutput } from '@orgplace/orgui-react/Output';
+import { OuiOverlay } from '@orgplace/orgui-react/Overlay';
+import { OuiSwitch } from '@orgplace/orgui-react/Switch';
 import keycode from 'keycode';
 
 class AssistDemo extends React.Component<{}, any> {
