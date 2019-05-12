@@ -10,6 +10,7 @@ function navbar($self_depth)
     <h1 class="navbar__item"><a href="<?=relpath('.', $self_depth)?>" class="brandLink">Org UI</a></h1>
     <div class="navbar__item"><a href="<?=relpath('basics.html', $self_depth)?>">Basics</a></div>
     <div class="navbar__item"><a href="<?=relpath('components/', $self_depth)?>">Components</a></div>
+    <div class="navbar__item"><a href="<?=relpath('react/', $self_depth)?>">React</a></div>
   </div>
 </nav>
 
