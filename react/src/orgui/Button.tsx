@@ -13,4 +13,15 @@ const OuiButton: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement> & OuiCol
   );
 }
 
-export { OuiButton };
+const OuiLinkButton: React.FC<React.ButtonHTMLAttributes<HTMLAnchorElement> & OuiColorVariationAttributes> = (props) => {
+  const {colorVariation, ...anchorProps} = props;
+  return (
+    <a {...anchorProps} className={classNames(
+      'ouiButton',
+      colorVariation,
+      anchorProps.className,
+    )}>{anchorProps.children}</a>
+  );
+}
+
+export { OuiButton, OuiLinkButton };
