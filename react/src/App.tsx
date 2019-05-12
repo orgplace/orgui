@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { OuiColorVariation } from './orgui';
 import { OuiAssist, OuiAssistItem } from './orgui/Assist';
 import { OuiBreadcrumb, OuiBreadcrumbItem } from './orgui/Breadcrumb';
@@ -13,7 +12,6 @@ import { OuiOutput } from './orgui/Output';
 import { OuiOverlay } from './orgui/Overlay';
 import { OuiSwitch } from './orgui/Switch';
 import keycode from 'keycode';
-import { tsPropertySignature } from '@babel/types';
 
 class AssistDemo extends React.Component<{}, any> {
   constructor(props: Readonly<{}>) {
