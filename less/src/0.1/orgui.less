@@ -52,16 +52,6 @@ body {
   outline: 1px dotted @outlineColor;
 }
 
-a:link {
-  color: @linkColor;
-}
-a:visited {
-  color: @linkVisitedColor;
-}
-a:hover, a:active {
-  color: @linkActiveColor;
-}
-
 button,
 input,
 optgroup,
@@ -72,6 +62,29 @@ output {
   font-size: 100%;
   line-height: @line-height__component;
 }
+
+/*
+ * Anchor
+ */
+
+a:link {
+  color: @linkColor;
+}
+a:visited {
+  color: @linkVisitedColor;
+}
+a:hover, a:active {
+  color: @linkDisabledColor;
+}
+
+a.isDisabled {
+  pointer-events: none;
+  text-decoration: none;
+}
+
+/*
+ * Headings
+ */
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
